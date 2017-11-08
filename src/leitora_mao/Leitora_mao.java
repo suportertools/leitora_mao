@@ -39,7 +39,7 @@ public class Leitora_mao {
 
                 StringBuilder response = new StringBuilder();
                 //URL url = new URL("http://localhost:8084/monitorCatraca");
-                URL url = new URL(GC.getCaminho() + "/ws/liberar_cartao.xhtml?cliente=" + GC.getCliente() + "&cartao=" + GC.getLeitora() + "&" + "catraca=" + GC.getCatraca());
+                URL url = new URL(GC.getCaminho() + "/ws/liberar_cartao.xhtml?cliente=" + GC.getCliente() + "&cartao=" + GC.getLeitora() + "&" + "catraca=" + GC.getCatraca() + "&" + "servidor=" + GC.getServidor());
                 Charset charset = Charset.forName("UTF8");
 
                 HttpURLConnection con = (HttpURLConnection) url.openConnection();

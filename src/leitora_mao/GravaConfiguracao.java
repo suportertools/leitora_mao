@@ -44,9 +44,9 @@ public class GravaConfiguracao implements KeyListener {
     private String caminho = "";
     private String catraca = "";
     private String cliente = "";
+    private String servidor = "";
     private JLabel label_cartao = new JLabel("Número do Cartão");
     private JLabel label_ativa = new JLabel("");
-    private String servidor = "";
     
     public GravaConfiguracao() {
         
@@ -137,7 +137,7 @@ public class GravaConfiguracao implements KeyListener {
                 caminho = json.getString("caminho");
                 catraca = json.getString("catraca");
                 cliente = json.getString("cliente");
-                setServidor(json.getString("servidor"));
+                servidor = json.getString("servidor");
                 label_ativa.setText("Leitora da Catraca n° " + catraca);
             } catch (IOException | JSONException ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage());
@@ -188,6 +188,14 @@ public class GravaConfiguracao implements KeyListener {
         this.catraca = catraca;
     }
     
+    public String getServidor() {
+        return servidor;
+    }
+
+    public void setServidor(String servidor) {
+        this.servidor = servidor;
+    }
+    
     public String getLeitora() {
         return leitora;
     }
@@ -226,11 +234,4 @@ public class GravaConfiguracao implements KeyListener {
         this.cliente = cliente;
     }
 
-    public String getServidor() {
-        return servidor;
-    }
-
-    public void setServidor(String servidor) {
-        this.servidor = servidor;
-    }
 }
